@@ -1,6 +1,5 @@
 #img-bg{
     background-image: url("https://cdn.discordapp.com/attachments/859823666006720512/880538960215035924/Imagem_Techelp.Mulher_comp.gif");
 
-  height: 100vh;
-  width: 100vw;
+  background-repeat: no-repeat;
 }
