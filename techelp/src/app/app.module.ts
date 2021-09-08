@@ -12,6 +12,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { FormsModule } from "@angular/forms";
 import { InicioComponent } from './inicio/inicio.component';
 import { TemaComponent } from './tema/tema.component';
+import { PostagemComponent } from './postagem/postagem.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { TemaComponent } from './tema/tema.component';
     CadastrarComponent,
     InicioComponent,
     TemaComponent,
+    PostagemComponent,
   ],
   imports: [
     BrowserModule,
