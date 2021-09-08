@@ -13,6 +13,8 @@ const routes: Routes = [
 
 {path: "inicio", component: InicioComponent}
 
+
+
 ];
 
 @NgModule({
