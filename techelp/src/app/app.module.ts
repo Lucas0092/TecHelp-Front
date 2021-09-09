@@ -13,6 +13,7 @@ import { FormsModule } from "@angular/forms";
 import { InicioComponent } from './inicio/inicio.component';
 import { TemaComponent } from './tema/tema.component';
 import { PostagemComponent } from './postagem/postagem.component';
+import { ForumComponent } from './forum/forum.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { PostagemComponent } from './postagem/postagem.component';
     InicioComponent,
     TemaComponent,
     PostagemComponent,
+    ForumComponent,
   ],
   imports: [
     BrowserModule,

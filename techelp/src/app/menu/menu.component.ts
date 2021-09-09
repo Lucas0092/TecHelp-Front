@@ -19,6 +19,10 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  forum(){
+    this.router.navigate(["/forum"])
+  }
+
   sair(){
     this.router.navigate(["/entrar"])
     environment.token = ""
