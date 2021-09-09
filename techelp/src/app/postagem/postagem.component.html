@@ -3,20 +3,20 @@
         <form>
             <div class="form-group">
                 <label for="Curso">Curso</label>
-                <input [(ngModel)]='postagem.curso' type="text" class="form-control" id="Curso" placeholder="Título do Curso">
+                <input [(ngModel)]='postagem.curso' name="curso" type="text" class="form-control" id="Curso" placeholder="Título do Curso">
             </div>
             <div class="form-group">
                 <label for="Nivel">Nível do Curso</label>
-                <input [(ngModel)]='postagem.nivel' type="text" class="form-control" id="Nivel" placeholder="Nivel do Curso">
+                <input [(ngModel)]='postagem.nivel' type="text" name="nivel" class="form-control" id="Nivel" placeholder="Nivel do Curso">
             </div>
             <div class="form-group">
                 <label for="descricao">descricao do Curso</label>
-                <input [(ngModel)]='postagem.descricao' type="text" class="form-control" id="descricao"
+                <input [(ngModel)]='postagem.descricao' type="text" name="descricao" class="form-control" id="descricao"
                     placeholder="Descricao do Curso">
             </div>
             <div class="form-group">
                 <label for="tema">Tema do Curso</label>
-                <select class="form-control" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
+                <select class="form-control" id="tema" name="tipo" [(ngModel)]='idTema' (change)='findByIdTema()'>
                     <option *ngFor='let item of listaTemas' value="{{item.id}}">
                         {{item.tipo}}
                     </option>

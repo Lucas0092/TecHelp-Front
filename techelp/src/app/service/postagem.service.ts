@@ -23,13 +23,13 @@ export class PostagemService {
     return this.http.get<Postagem>(`https://projetotechelp.herokuapp.com/postagens/${id}`, this.token)
   }
 
-/* getByCursoPostagem(curso: string): Observable<Postagem>{
-    return this.http.get<Postagem>('https://projetotechelp.herokuapp.com/postagens/curso/${id}', this.token)
+  getByCursoPostagem(curso: string): Observable<Postagem>{
+    return this.http.get<Postagem>(`https://projetotechelp.herokuapp.com/postagens/curso/${curso}`, this.token)
   }
 
   getByPostagem(nivel: string): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>('https://projetotechelp.herokuapp.com/postagens/titulo/',this.token)
-  } */
+    return this.http.get<Postagem[]>(`https://projetotechelp.herokuapp.com/postagens/titulo/${nivel}`,this.token)
+  } 
 
   postPostagem(postagem: Postagem) : Observable<Postagem>{
     return this.http.post<Postagem>('https://projetotechelp.herokuapp.com/postagens/', postagem, this.token)

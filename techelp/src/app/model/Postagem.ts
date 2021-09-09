@@ -6,6 +6,7 @@ export class Postagem{
     public curso: string
     public nivel: string
     public descricao: string
+    public imagem: string
     public usuario: Usuario
     public tema: Tema
 }
