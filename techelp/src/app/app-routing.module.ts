@@ -18,7 +18,8 @@ const routes: Routes = [
 {path: "tema", component: TemaComponent},
 {path: "postagem", component: PostagemComponent},
 
-{path: "forum", component: ForumComponent}
+{path: "forum", component: ForumComponent},
+
 
 
 
