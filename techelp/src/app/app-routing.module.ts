@@ -20,7 +20,7 @@ const routes: Routes = [
 {path: "postagem", component: PostagemComponent},
 
 {path: "forum", component: ForumComponent},
-{path: "curso", component: CursoComponent}
+{path: 'curso/:tipo', component: CursoComponent}
 
 
 ];

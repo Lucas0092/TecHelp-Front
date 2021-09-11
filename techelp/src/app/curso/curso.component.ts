@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { Postagem } from '../model/Postagem';
+import { Tema } from '../model/Tema';
+import { AuthService } from '../service/auth.service';
+import { PostagemService } from '../service/postagem.service';
+import { TemaService } from '../service/tema.service';
 
 @Component({
   selector: 'app-curso',
@@ -7,9 +14,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CursoComponent implements OnInit {
 
-  constructor() { }
+  postagem: Postagem = new Postagem()
+  listaPostagem: Postagem[]
+  tema: Tema = new Tema()
+  tipoTema: string 
 
-  ngOnInit(): void {
+  constructor( private router: Router,
+    private route: ActivatedRoute,
+    private postagemService: PostagemService,
+    private temaService: TemaService,
+    public authService: AuthService
+    ) { }
+
+  ngOnInit(){
+    if(environment.token == ''){
+      this.router.navigate(['/entrar'])
+    }
+
+    let tipo = this.route.snapshot.params['tipo']
+    this.findByTipo(tipo)
+  }
+  
+  getAllPostagens(){
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
+      this.listaPostagem = resp
+    })
+  }
+
+  findByTipo(tipo: string){
+    this.temaService.getByTipoTema(tipo).subscribe((resp: Tema)=>{
+      this.tema = resp
+      console.log(this.tema)
+    })
   }
 
 }

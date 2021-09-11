@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" >
 
     <div class="row d-flex justify-content-center">
         <div class="col-md-12 p-0 mb-5">
@@ -32,73 +32,19 @@
 
     </div>
 
-    <div class="row d-flex justify-content-center mt-3 mb-3">
+    
+
+      <div class="card-group">
         <div class="col-md-1"></div>
-        <div class="col-md-2 text-center">
-            <a ><img class="rounded-circle ic-50 btn" src="https://i.imgur.com/AVXsWBw.png" alt=""></a>
+        <div class="col-md-2 text-center" *ngFor='let item of listaTemas'>
+            <a [routerLink]="['/curso', item.tipo]"><img class="rounded-circle ic-50 btn" src="https://i.imgur.com/AVXsWBw.png" alt=""></a>
             <div class="card-deck mt-3 mb-3">
                 <div class="card">
                   <div class="card-body">
-                    <h5 class="card-title">Back-End</h5>
+                    <h5 class="card-title">{{item.tipo}}</h5>
                     <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior, para demonstração.</p>
                   </div>
                 </div>
                 </div>
         </div>
-
-        <div class="col-md-2 text-center">
-            <a ><img class="rounded-circle ic-50 btn" src="https://i.imgur.com/AVXsWBw.png" alt=""></a>
-            <div class="card-deck mt-3 mb-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Front-End</h5>
-                    <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior, para demonstração.</p>
-                  </div>
-                </div>
-                </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <a ><img class="rounded-circle ic-50 btn" src="https://i.imgur.com/AVXsWBw.png" alt=""></a>
-            <div class="card-deck mt-3 mb-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Banco de Dados</h5>
-                    <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior, para demonstração.</p>
-                  </div>
-                </div>
-                </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <a ><img class="rounded-circle ic-50 btn" src="https://i.imgur.com/AVXsWBw.png" alt=""></a>
-            <div class="card-deck mt-3 mb-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Bootcamp</h5>
-                    <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior, para demonstração.</p>
-                  </div>
-                </div>
-                </div>
-        </div>
-
-        <div class="col-md-2 text-center">
-            <a ><img class="rounded-circle ic-50 btn" src="https://i.imgur.com/AVXsWBw.png" alt=""></a>
-            <div class="card-deck mt-3 mb-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Lógica</h5>
-                    <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior, para demonstração.</p>
-                  </div>
-                </div>
-                </div>
-        </div>
-        <div class="col-md-1"></div>
-
-        <p class="text-center mr-5"> <a routerLink='/tema'> cadastrar um tema</a> </p>
-
-        <p class="text-center"> <a routerLink="/postagem"> cadastrar um curso</a> </p>
-
     </div>
-
-</div>
