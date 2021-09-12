@@ -16,6 +16,7 @@ export class CursoComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagem: Postagem[]
+
   tema: Tema = new Tema()
   tipoTema: string 
 
@@ -31,10 +32,11 @@ export class CursoComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
 
-    let tipo = this.route.snapshot.params['tipo']
-    this.findByTipo(tipo)
+    this.tipoTema = this.route.snapshot.params['tipo']
+    this.findByTipo(this.tipoTema)
   }
   
+
   getAllPostagens(){
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
       this.listaPostagem = resp
@@ -45,6 +47,7 @@ export class CursoComponent implements OnInit {
     this.temaService.getByTipoTema(tipo).subscribe((resp: Tema)=>{
       this.tema = resp
       console.log(this.tema)
+      console.log('ppp')
     })
   }
 

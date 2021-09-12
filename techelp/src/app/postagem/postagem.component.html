@@ -15,6 +15,16 @@
                     placeholder="Descricao do Curso">
             </div>
             <div class="form-group">
+                <label for="imagem">imagem do Curso</label>
+                <input [(ngModel)]='postagem.imagem' type="text" name="imagem" class="form-control" id="imagem"
+                    placeholder="imagem do Curso">
+            </div>
+            <div class="form-group">
+                <label for="link">imagem do Curso</label>
+                <input [(ngModel)]='postagem.link' type="text" name="link" class="form-control" id="link"
+                    placeholder="link do Curso">
+            </div>
+            <div class="form-group">
                 <label for="tema">Tema do Curso</label>
                 <select class="form-control" id="tema" name="tipo" [(ngModel)]='idTema' (change)='findByIdTema()'>
                     <option *ngFor='let item of listaTemas' value="{{item.id}}">
