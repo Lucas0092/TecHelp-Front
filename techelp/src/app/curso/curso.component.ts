@@ -32,8 +32,8 @@ export class CursoComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
 
-    this.tipoTema = this.route.snapshot.params['tipo']
-    this.findByTipo(this.tipoTema)
+    let id = this.route.snapshot.params['id']
+    this.findById(id)
   }
   
 
@@ -43,12 +43,10 @@ export class CursoComponent implements OnInit {
     })
   }
 
-  findByTipo(tipo: string){
-    this.temaService.getByTipoTema(tipo).subscribe((resp: Tema)=>{
-      this.tema = resp
-      console.log(this.tema)
-      console.log('ppp')
+  findById(id: number){
+    this.temaService.getByIdTema(id).subscribe((resp: Tema)=>{
+      this.tema = resp   
     })
+    console.log(this.tema)
   }
-
 }

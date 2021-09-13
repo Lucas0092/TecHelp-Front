@@ -37,11 +37,11 @@
       <div class="card-group">
         <div class="col-md-1"></div>
         <div class="col-md-2 text-center" *ngFor='let item of listaTemas'>
-            <a [routerLink]="['/curso', item.tipo]"><img class="rounded-circle ic-50 btn" src="{{item.imagem}}" alt=""></a>
+            <a [routerLink]="['/curso', item.id]"><img class="rounded-circle ic-50 btn" src="{{item.imagem}}" alt=""></a>
             <div class="card-deck mt-3 mb-3">
                 <div class="card">
                   <div class="card-body">
-                    <a [routerLink]="['/curso', item.tipo]"><h5 class="card-title">{{item.tipo}}</h5></a> 
+                    <a [routerLink]="['/curso', item.id]"><h5 class="card-title">{{item.tipo}}</h5></a> 
                     <p class="card-text">{{item.descricao}}</p>
                   </div>
                 </div>
