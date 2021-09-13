@@ -19,7 +19,7 @@ export class RespostaComponent implements OnInit {
   forum: Forum = new Forum()
   listaForum: Forum[]
 
-   
+
 
   constructor(
     private router: Router,
@@ -27,21 +27,21 @@ export class RespostaComponent implements OnInit {
     private forumService: ForumService,
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
 
     if (environment.token == '') {
       this.router.navigate(['/entrar'])
     }
-
+    this.getAllResposta()
   }
 
-  getAllResposta(){
+  getAllResposta() {
     this.respostaService.getAllResposta().subscribe((resp: Resposta[]) => {
       this.listaResposta = resp
     })
   }
 
-  getAllForum(){
+  getAllForum() {
     this.forumService.getAllForum().subscribe((resp: Forum[]) => {
       this.listaForum = resp
     })
