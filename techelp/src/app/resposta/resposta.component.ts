@@ -21,10 +21,14 @@ export class RespostaComponent implements OnInit {
   forum: Forum = new Forum()
   listaForum: Forum[]
 
+<<<<<<< HEAD
   idForum: number
 
   user: Usuario = new Usuario()
   idUser = environment.id
+=======
+
+>>>>>>> 00147aacec147cf1f89c17fcf8b9774c4a42a39a
 
   constructor(
     private router: Router,
@@ -33,11 +37,12 @@ export class RespostaComponent implements OnInit {
     public authService: AuthService,
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
 
     if (environment.token == '') {
       this.router.navigate(['/entrar'])
     }
+<<<<<<< HEAD
 
     this.getAllForum()
     this.getAllResposta()
@@ -48,14 +53,18 @@ export class RespostaComponent implements OnInit {
     this.forumService.getAllForum().subscribe((resp: Forum[]) => {
       this.listaForum = resp
     })
+=======
+    this.getAllResposta()
+>>>>>>> 00147aacec147cf1f89c17fcf8b9774c4a42a39a
   }
 
-  getAllResposta(){
+  getAllResposta() {
     this.respostaService.getAllResposta().subscribe((resp: Resposta[]) => {
       this.listaResposta = resp
     })
   }
 
+<<<<<<< HEAD
     comentar(){
       this.forum.id = this.idForum
       this.resposta.forum = this.forum
@@ -74,6 +83,11 @@ export class RespostaComponent implements OnInit {
   findByIdForum(){
     this.forumService.getByIdForum(this.idForum).subscribe((resp: Forum) =>{
       this.forum = resp
+=======
+  getAllForum() {
+    this.forumService.getAllForum().subscribe((resp: Forum[]) => {
+      this.listaForum = resp
+>>>>>>> 00147aacec147cf1f89c17fcf8b9774c4a42a39a
     })
   }
 
