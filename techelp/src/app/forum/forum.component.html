@@ -29,7 +29,7 @@
         <div class="col-md-8">
             <div class="form-group text-center">
                     <label for="publicacao">Título da Publicação</label>
-                    <input type="text" class="form-control" id="publicacao" placeholder="titulo da sua publicação">
+                    <input [(ngModel)]="forum.titulo" type="text" class="form-control" id="publicacao" placeholder="titulo da sua publicação">
             </div>
         </div>
     </div>
@@ -38,7 +38,7 @@
         <div class="col-md-8">
             <div class="form-group text-center">
                     <label for="imagem">Imagem da Publicação</label>
-                    <input type="text" class="form-control" id="imagem" placeholder="link da imagem da sua publicação">
+                    <input [(ngModel)]="forum.imagem" type="text" class="form-control" id="imagem" placeholder="link da imagem da sua publicação">
             </div>
         </div>
     </div>
@@ -47,12 +47,12 @@
         <div class="col-md-8">
             <div class="form-group text-center">
                     <label for="titulo">Sua publicação</label>
-                    <textarea style="height: 300%;" type="text" class="form-control" id="titulo" placeholder="digite sua publicação"></textarea>
+                    <textarea [(ngModel)]="forum.publicacao" style="height: 300%;" type="text" class="form-control" id="titulo" placeholder="digite sua publicação"></textarea>
             </div>
         </div>
     </div>
     <div class="row d-flex justify-content-center">
-        <button class="btn btn-outline-primary mb-3">Publicar</button>
+        <button (click)="cadastrar()" class="btn btn-outline-primary mb-3">Publicar</button>
     </div>
     
 </div>
