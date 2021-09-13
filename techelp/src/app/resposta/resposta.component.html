@@ -1,4 +1,23 @@
-<div class="container">
+<div class="container mt-5 mb-5 rounded">
+    <div class="row d-flex justify-content-center mb-3">
+        <div class="col-md-8">
+            <div class="form-group text-center">
+                    <label for="imagem">Imagem do Comentário</label>
+                    <input [(ngModel)]="resposta.imagem" type="text" class="form-control" id="imagem" placeholder="link da imagem do seu comentário">
+            </div>
+        </div>
+    </div>
 
+    <div class="row d-flex justify-content-center mb-1">
+        <div class="col-md-8">
+            <div class="form-group text-center">
+                    <label for="comentario">Seu Comentário</label>
+                    <textarea [(ngModel)]="resposta.comentario" style="height: 300%;" type="text" class="form-control" id="comentario" placeholder="digite seu comentário"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <button (click)="comentar()" class="btn btn-outline-primary mb-3">Comentar</button>
+    </div>
 
 </div>
