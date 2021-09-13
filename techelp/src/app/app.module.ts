@@ -15,6 +15,8 @@ import { TemaComponent } from './tema/tema.component';
 import { PostagemComponent } from './postagem/postagem.component';
 import { ForumComponent } from './forum/forum.component';
 import { RespostaComponent } from './resposta/resposta.component';
+import { CursoComponent } from './curso/curso.component';
+import { UsuarioComponent } from './edit/usuario/usuario.component';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { RespostaComponent } from './resposta/resposta.component';
     PostagemComponent,
     ForumComponent,
     RespostaComponent,
+    CursoComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,

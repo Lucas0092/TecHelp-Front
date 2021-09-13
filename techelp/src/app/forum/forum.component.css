@@ -1,3 +1,11 @@
 .p-0{
     padding: 0px;
 }
+.escondido{
+    display: none;
+}
+
+.img-forum{
+    width: 150px;
+    height: 150px;
+}

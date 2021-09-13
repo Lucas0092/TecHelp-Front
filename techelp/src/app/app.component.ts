@@ -8,8 +8,9 @@ import { AuthService } from './service/auth.service';
 })
 export class AppComponent {
 
+  inboundClick = true;
+  outboundClick = true;
   constructor(
     public auth: AuthService
-  ){}
-  
+  ) { }
 }

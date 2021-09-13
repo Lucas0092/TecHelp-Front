@@ -1,0 +1,23 @@
+<div class="jumbotron jumbotron-fluid" style="background-color:#11A5D4;">
+    <div class="container">
+        <h1 class="display-4">{{tema.tipo}}</h1>
+        <p class="lead">Esta é uma área dedicada para se aprender linguagens e frameworks relacionadas a {{tema.tipo}}
+            100% gratuito!
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card-group">
+        <div class="card centro" *ngFor='let item of tema.postagens'>
+            <img class="card-img-top" src="{{item.imagem}}" alt="Imagem de capa do card">
+            <div class="card-body">
+                <h5 class="card-title">{{item.curso}}</h5>
+                <small>{{item.nivel}}</small>
+                <p class="card-text">{{item.descricao}}</p>
+                <a href="{{item.link}}" class="btn btn-primary">Clique
+                    aqui!</a>
+            </div>
+        </div>
+    </div>
+</div>

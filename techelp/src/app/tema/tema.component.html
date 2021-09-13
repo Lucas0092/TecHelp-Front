@@ -14,8 +14,16 @@
             <div class="row d-flex justify-content-center mt-4 mb-5">
                 <div class="col-md-3">
                     <div class="form-group">
-                        <input nema="tipos" [(ngModel)]='tema.tipo' type="text" class="form-control" id="tipo"
-                            placeholder="Digite a descrição do tema">
+                        <input name="tipos" [(ngModel)]='tema.tipo' type="text" class="form-control" id="tipo"
+                            placeholder="Digite o tipo do tema (uma das trilhas)">
+                    </div>
+                    <div class="form-group">
+                        <input name="imagem" [(ngModel)]='tema.imagem' type="text" class="form-control" id="imagem"
+                            placeholder="link da imagem para o card do tema">
+                    </div>
+                    <div class="form-group">
+                        <input name="descricao" [(ngModel)]='tema.descricao' type="text" class="form-control" id="descricao"
+                            placeholder="descricao para o card do tema">
                     </div>
 
                     <div class="d-flex justify-content-center">

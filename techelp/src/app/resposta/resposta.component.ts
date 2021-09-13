@@ -44,7 +44,7 @@ export class RespostaComponent implements OnInit {
 
   }
 
- getAllForum(){
+  getAllForum() {
     this.forumService.getAllForum().subscribe((resp: Forum[]) => {
       this.listaForum = resp
     })
@@ -56,23 +56,23 @@ export class RespostaComponent implements OnInit {
     })
   }
 
-    comentar(){
-      this.forum.id = this.idForum
-      this.resposta.forum = this.forum
-  
-      this.user.id = this.idUser
-      this.resposta.usuario = this.user
-  
-      this.respostaService.postResposta(this.resposta).subscribe((resp: Resposta) => {
-        this.resposta = resp
-        alert('Comentário realizado com sucesso')
-        this.resposta = new Resposta()
-      })
+  comentar() {
+    this.forum.id = this.idForum
+    this.resposta.forum = this.forum
+
+    this.user.id = this.idUser
+    this.resposta.usuario = this.user
+
+    this.respostaService.postResposta(this.resposta).subscribe((resp: Resposta) => {
+      this.resposta = resp
+      alert('Comentário realizado com sucesso')
+      this.resposta = new Resposta()
+    })
 
   }
 
-  findByIdForum(){
-    this.forumService.getByIdForum(this.idForum).subscribe((resp: Forum) =>{
+  findByIdForum() {
+    this.forumService.getByIdForum(this.idForum).subscribe((resp: Forum) => {
       this.forum = resp
     })
   }

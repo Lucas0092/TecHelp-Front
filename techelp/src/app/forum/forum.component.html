@@ -24,12 +24,25 @@
     </div>
 </div>
 
-<div class="container mt-5 mb-5 rounded" >
+<div class="container mt-5 mb-5">
+    <div class="card mb-2" *ngFor='let item of listaForum'>
+        <h5 class="card-header">{{item.titulo}}</h5>
+        <div class="card-body">
+            <img class="img-forum" src="{{item.imagem}}" alt="imagem da publicação do usuário">
+            <p class="card-text">{{item.publicacao}}
+            </p>
+            <button class="btn btn-info mr-4" >Participar desse forum</button>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5 mb-5 rounded">
     <div class="row d-flex justify-content-center mb-3">
         <div class="col-md-8">
             <div class="form-group text-center">
-                    <label for="publicacao">Título da Publicação</label>
-                    <input [(ngModel)]="forum.titulo" type="text" class="form-control" id="publicacao" placeholder="titulo da sua publicação">
+                <label for="publicacao">Título da Publicação</label>
+                <input [(ngModel)]="forum.titulo" type="text" class="form-control" id="publicacao"
+                    placeholder="titulo da sua publicação">
             </div>
         </div>
     </div>
@@ -37,8 +50,9 @@
     <div class="row d-flex justify-content-center mb-3">
         <div class="col-md-8">
             <div class="form-group text-center">
-                    <label for="imagem">Imagem da Publicação</label>
-                    <input [(ngModel)]="forum.imagem" type="text" class="form-control" id="imagem" placeholder="link da imagem da sua publicação">
+                <label for="imagem">Imagem da Publicação</label>
+                <input [(ngModel)]="forum.imagem" type="text" class="form-control" id="imagem"
+                    placeholder="link da imagem da sua publicação">
             </div>
         </div>
     </div>
@@ -46,13 +60,17 @@
     <div class="row d-flex justify-content-center mb-1">
         <div class="col-md-8">
             <div class="form-group text-center">
-                    <label for="titulo">Sua publicação</label>
-                    <textarea [(ngModel)]="forum.publicacao" style="height: 300%;" type="text" class="form-control" id="titulo" placeholder="digite sua publicação"></textarea>
+                <label for="titulo">Sua publicação</label>
+                <textarea [(ngModel)]="forum.publicacao" style="height: 300%;" type="text" class="form-control"
+                    id="titulo" placeholder="digite sua publicação"></textarea>
             </div>
         </div>
     </div>
     <div class="row d-flex justify-content-center">
-        <button (click)="cadastrar()" class="btn btn-outline-primary mb-3">Publicar</button>
+        <button (click)="publicar()" class="btn btn-outline-primary mb-3">Publicar</button>
     </div>
-    <p class="text-center mr-5"> <a routerLink='/resposta'> cadastrar uma resposta</a> </p>
+</div>
+
+<div>
+
 </div>
