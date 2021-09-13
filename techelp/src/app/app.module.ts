@@ -14,6 +14,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { TemaComponent } from './tema/tema.component';
 import { PostagemComponent } from './postagem/postagem.component';
 import { ForumComponent } from './forum/forum.component';
+import { RespostaComponent } from './resposta/resposta.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { ForumComponent } from './forum/forum.component';
     TemaComponent,
     PostagemComponent,
     ForumComponent,
+    RespostaComponent,
   ],
   imports: [
     BrowserModule,

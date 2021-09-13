@@ -5,6 +5,7 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { ForumComponent } from './forum/forum.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PostagemComponent } from './postagem/postagem.component';
+import { RespostaComponent } from './resposta/resposta.component';
 import { TemaComponent } from './tema/tema.component';
 
 const routes: Routes = [
@@ -19,10 +20,7 @@ const routes: Routes = [
 {path: "postagem", component: PostagemComponent},
 
 {path: "forum", component: ForumComponent},
-
-
-
-
+{path: "resposta", component: RespostaComponent}
 ];
 
 @NgModule({

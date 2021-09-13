@@ -27,7 +27,7 @@ export class PostagemService {
     return this.http.get<Postagem>(`https://projetotechelp.herokuapp.com/postagens/curso/${curso}`, this.token)
   }
 
-  getByPostagem(nivel: string): Observable<Postagem[]>{
+  getByNivelPostagem(nivel: string): Observable<Postagem[]>{
     return this.http.get<Postagem[]>(`https://projetotechelp.herokuapp.com/postagens/titulo/${nivel}`,this.token)
   } 
 
