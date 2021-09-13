@@ -26,10 +26,11 @@ export class PostagemComponent implements OnInit {
   user: Usuario = new Usuario()
   idUser = environment.id
 
-  constructor( private router: Router,
+  constructor(
+    private router: Router,
     private postagemService: PostagemService,
     private temaService: TemaService,
-    public authService: AuthService
+    public authService: AuthService,
     ) { }
 
   ngOnInit(){

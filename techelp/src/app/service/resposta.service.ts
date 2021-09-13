@@ -31,6 +31,10 @@ export class RespostaService {
     return this.http.get<Resposta>(`https://projetotechelp.herokuapp.com/resposta/imagem/${imagem}`, this.token)
   }
 
+  postResposta(resposta: Resposta): Observable<Resposta>{
+    return this.http.post<Resposta>('https://projetotechelp.herokuapp.com/resposta', resposta, this.token)
+  }
+
   putResposta(resposta: Resposta): Observable<Resposta>{
     return this.http.put<Resposta>('https://projetotechelp.herokuapp.com/resposta', resposta, this.token)
   }
