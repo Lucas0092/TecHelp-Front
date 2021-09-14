@@ -22,8 +22,8 @@
                             placeholder="link da imagem para o card do tema">
                     </div>
                     <div class="form-group">
-                        <input name="descricao" [(ngModel)]='tema.descricao' type="text" class="form-control" id="descricao"
-                            placeholder="descricao para o card do tema">
+                        <input name="descricao" [(ngModel)]='tema.descricao' type="text" class="form-control"
+                            id="descricao" placeholder="descricao para o card do tema">
                     </div>
 
                     <div class="d-flex justify-content-center">
@@ -61,6 +61,10 @@
                     <tr *ngFor='let item of listaTemas'>
                         <th>{{item.id}}</th>
                         <td>{{item.tipo}}</td>
+                        <td class="d-flex justify-content-end">
+                            <button class="btn btn-info mr-3" [routerLink]="['/tema-edit', item.id]">Editar</button>
+                            <button class="btn btn-danger" [routerLink]="['/tema-delete', item.id]">Apagar</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
