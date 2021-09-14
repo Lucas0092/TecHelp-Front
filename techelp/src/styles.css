@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+#feedback {
+    position: fixed;
+    right: 0px;
+    top: 30vh;
+    bottom: 30vh;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    scroll-behavior: smooth;
+    transition: .4s;
+    font-size: 7pt;
+    font-weight: bold;
+    writing-mode: vertical-lr;
+    text-transform: uppercase;
+    text-orientation: upright;
+    height: 120px;
+    margin: 0;
+}

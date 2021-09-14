@@ -17,6 +17,7 @@ import { ForumComponent } from './forum/forum.component';
 import { RespostaComponent } from './resposta/resposta.component';
 import { CursoComponent } from './curso/curso.component';
 import { UsuarioComponent } from './edit/usuario/usuario.component';
+import { SobreComponent } from './sobre/sobre.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { UsuarioComponent } from './edit/usuario/usuario.component';
     ForumComponent,
     RespostaComponent,
     CursoComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    SobreComponent
   ],
   imports: [
     BrowserModule,

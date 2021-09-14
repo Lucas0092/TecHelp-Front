@@ -7,6 +7,7 @@ import { ForumComponent } from './forum/forum.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PostagemComponent } from './postagem/postagem.component';
 import { RespostaComponent } from './resposta/resposta.component';
+import { SobreComponent } from './sobre/sobre.component';
 import { TemaComponent } from './tema/tema.component';
 
 const routes: Routes = [
@@ -22,7 +23,9 @@ const routes: Routes = [
 
 {path: "forum", component: ForumComponent},
 {path: "resposta/:id", component: RespostaComponent},
-{path: 'curso/:id', component: CursoComponent}
+{path: 'curso/:id', component: CursoComponent},
+
+{path: "sobre", component: SobreComponent}
 
 
 ];

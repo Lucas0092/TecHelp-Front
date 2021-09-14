@@ -1,0 +1,96 @@
+/* Estilos da página index.html */
+
+.center {
+    text-align: center;
+}
+
+body {
+    background-image: linear-gradient(to bottom, #0C8DF6, #00ff62);
+}
+
+.justify {
+    text-align: justify;
+}
+
+.container1 {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu li {
+    display: inline;
+    padding: 15px;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+#menu li a:hover {
+    color: grey;
+}
+
+.p-30 {
+    padding: 30px;
+}
+
+.wh {
+    width: 200px;
+    height: 100px;
+}
+
+.tm-social {
+    width: 50px;
+}
+
+.tamanho {
+    width: 900px;
+    height: 400px;
+}
+
+.centro {
+    text-align: center;
+    font-weight: 400;
+}
+
+.fa-instagram {
+    font-size: 45pt;
+    color: black;
+}
+
+.fa-instagram:hover {
+    color: #C13584;
+}
+
+.confia {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.fa-linkedin {
+    font-size: 45pt;
+}
+
+.fa-linkedin:hover {
+    color: rgb(0, 47, 255);
+}
+
+.fa-github {
+    padding-right: 30px;
+    font-size: 45pt;
+}
+
+.fa-github:hover {
+    color: rgb(255, 255, 255);
+}
+
+/* Estilos da página botaozinho*/
+
+
+.tamanhoClick {
+    font-size: small;
+}

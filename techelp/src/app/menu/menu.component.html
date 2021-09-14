@@ -11,48 +11,51 @@
 
         <div class="container p-0">
 
-       
-        <!--Trazer para direita-->
-        
-        <div class="row no-gutters">
-            <div class="col-md-5 mr-0 d-flex">
-                <form class="form-inline my-2 my-lg-0 ">
-                    <input class="form-control mr-sm-2" size="50" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                    <a href="#" class="align-items-center" style="padding-top: 15px;"><p class="text-dark">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </p>
-                    </a>
-                </form>
-            </div>
-           
-            <div class="col-md-4 ml-auto d-flex p-2" style="font-size: 20px;">
-                <ul class="navbar-nav ml-auto" style="padding-top: 9px; width: 70%; padding-left: 100px;">
-                    <li class="nav-item active">
-                        <a class="nav-link" routerLink="/forum" ><i   class="fa fa-comments" aria-hidden="true" ></i><span class="sr-only" >(página atual)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-                    </li>
-                    <li class="nav-item dropdown active">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-cogs" aria-hidden="true"></i>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Acessibilidade</a>
-                            <a class="dropdown-item" href="#">Cores</a>
-                            <div class="dropdown-divider"></div>
-                            <a (click)="sair()" class="dropdown-item" href="#">Sair</a>
-                        </div>
-                    </li>
 
-                </ul>
+            <!--Trazer para direita-->
+
+            <div class="row no-gutters">
+                <div class="col-md-5 mr-0 d-flex">
+                    <form class="form-inline my-2 my-lg-0 ">
+                        <input class="form-control mr-sm-2" size="50" type="search" placeholder="Pesquisar"
+                            aria-label="Pesquisar">
+                        <a href="#" class="align-items-center" style="padding-top: 15px;">
+                            <p class="text-dark">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </p>
+                        </a>
+                    </form>
+                </div>
+
+                <div class="col-md-4 ml-auto d-flex p-2" style="font-size: 20px;">
+                    <ul class="navbar-nav ml-auto" style="padding-top: 9px; width: 70%; padding-left: 100px;">
+                        <li class="nav-item active">
+                            <a class="nav-link" routerLink="/forum"><i class="fa fa-comments"
+                                    aria-hidden="true"></i><span class="sr-only">(página atual)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" routerLink='/sobre'><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-cogs" aria-hidden="true"></i>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Acessibilidade</a>
+                                <a class="dropdown-item" href="#">Cores</a>
+                                <div class="dropdown-divider"></div>
+                                <a (click)="sair()" class="dropdown-item" href="#">Sair</a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
         <!--Trazer para direita-->
 
 
@@ -60,6 +63,6 @@
 
 
 
-       
+
     </div>
 </nav>
