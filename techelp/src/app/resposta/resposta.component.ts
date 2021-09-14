@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Forum } from '../model/Forum';
 import { Resposta } from '../model/Resposta';
@@ -19,18 +19,20 @@ export class RespostaComponent implements OnInit {
   listaResposta: Resposta[]
 
   forum: Forum = new Forum()
-  listaForum: Forum[]
 
   idForum: number
 
   user: Usuario = new Usuario()
   idUser = environment.id
 
+  temImagem: boolean
+
   constructor(
     private router: Router,
     private respostaService: RespostaService,
     private forumService: ForumService,
     public authService: AuthService,
+    public route: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -38,22 +40,18 @@ export class RespostaComponent implements OnInit {
     if (environment.token == '') {
       this.router.navigate(['/entrar'])
     }
-
-    this.getAllForum()
-    this.getAllResposta()
+    this.idForum = this.route.snapshot.params['id']
+    this.findByIdForum()
+    this.confere()
 
   }
 
-  getAllForum() {
-    this.forumService.getAllForum().subscribe((resp: Forum[]) => {
-      this.listaForum = resp
-    })
-  }
-
-  getAllResposta() {
-    this.respostaService.getAllResposta().subscribe((resp: Resposta[]) => {
-      this.listaResposta = resp
-    })
+  confere(){
+    if(this.forum.imagem == ""){
+      this.temImagem = false
+    } else{
+      this.temImagem = true
+    }
   }
 
   comentar() {
@@ -65,7 +63,7 @@ export class RespostaComponent implements OnInit {
 
     this.respostaService.postResposta(this.resposta).subscribe((resp: Resposta) => {
       this.resposta = resp
-      alert('Comentário realizado com sucesso')
+      alert('resposta realizada com sucesso')
       this.resposta = new Resposta()
     })
 

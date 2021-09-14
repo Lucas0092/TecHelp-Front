@@ -31,7 +31,7 @@
             <img class="img-forum" src="{{item.imagem}}" alt="imagem da publicação do usuário">
             <p class="card-text">{{item.publicacao}}
             </p>
-            <button class="btn btn-info mr-4" >Participar desse forum</button>
+            <button class="btn btn-info mr-4" [routerLink]="['/resposta', item.id]">Participar desse forum</button>
         </div>
     </div>
 </div>
