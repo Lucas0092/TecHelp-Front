@@ -42,17 +42,9 @@ export class RespostaComponent implements OnInit {
     }
     this.idForum = this.route.snapshot.params['id']
     this.findByIdForum()
-    this.confere()
 
   }
 
-  confere(){
-    if(this.forum.imagem == ""){
-      this.temImagem = false
-    } else{
-      this.temImagem = true
-    }
-  }
 
   comentar() {
     this.forum.id = this.idForum
@@ -72,6 +64,7 @@ export class RespostaComponent implements OnInit {
   findByIdForum() {
     this.forumService.getByIdForum(this.idForum).subscribe((resp: Forum) => {
       this.forum = resp
+      console.log(this.forum)
     })
   }
 

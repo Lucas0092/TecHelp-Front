@@ -1,43 +1,50 @@
-<div class="row d-flex justify-content-center mt-5 mb-5">
-    <div class="col-md-6">
-        <form>
-            <div class="form-group">
-                <label for="Curso">Curso</label>
-                <input [(ngModel)]='postagem.curso' name="curso" type="text" class="form-control" id="Curso" placeholder="Título do Curso">
-            </div>
-            <div class="form-group">
-                <label for="Nivel">Nível do Curso</label>
-                <input [(ngModel)]='postagem.nivel' type="text" name="nivel" class="form-control" id="Nivel" placeholder="Nivel do Curso">
-            </div>
-            <div class="form-group">
-                <label for="descricao">descricao do Curso</label>
-                <input [(ngModel)]='postagem.descricao' type="text" name="descricao" class="form-control" id="descricao"
-                    placeholder="Descricao do Curso">
-            </div>
-            <div class="form-group">
-                <label for="imagem">imagem do Curso</label>
-                <input [(ngModel)]='postagem.imagem' type="text" name="imagem" class="form-control" id="imagem"
-                    placeholder="imagem do Curso">
-            </div>
-            <div class="form-group">
-                <label for="link">link do Curso</label>
-                <input [(ngModel)]='postagem.link' type="text" name="link" class="form-control" id="link"
-                    placeholder="link do Curso">
-            </div>
-            <div class="form-group">
-                <label for="tema">Tema do Curso</label>
-                <select class="form-control" id="tema" name="tipo" [(ngModel)]='idTema' (change)='findByIdTema()'>
-                    <option *ngFor='let item of listaTemas' value="{{item.id}}">
-                        {{item.tipo}}
-                    </option>
-                </select>
-            </div>
-            <div>
-                <button type="button" class="btn btn-success" (click)='publicar()'>Publicar</button>
-            </div>
-        </form>
+<div class="container-fluid" style="background-color:rgb(20, 98, 112);">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-4 mt-5 mb-5" style="padding: 20px; background-color: rgb(85, 167, 182);border-radius: 5%;">
+            <form>
+                <div class="form-group">
+                    <label for="Curso">Curso</label>
+                    <input [(ngModel)]='postagem.curso' name="curso" type="text" class="form-control" id="Curso"
+                        placeholder="Título do Curso">
+                </div>
+                <div class="form-group">
+                    <label for="Nivel">Nível do Curso</label>
+                    <input [(ngModel)]='postagem.nivel' type="text" name="nivel" class="form-control" id="Nivel"
+                        placeholder="Nivel do Curso">
+                </div>
+                <div class="form-group">
+                    <label for="descricao">descricao do Curso</label>
+                    <input [(ngModel)]='postagem.descricao' type="text" name="descricao" class="form-control"
+                        id="descricao" placeholder="Descricao do Curso">
+                </div>
+                <div class="form-group">
+                    <label for="imagem">imagem do Curso</label>
+                    <input [(ngModel)]='postagem.imagem' type="text" name="imagem" class="form-control" id="imagem"
+                        placeholder="imagem do Curso">
+                </div>
+                <div class="form-group">
+                    <label for="link">link do Curso</label>
+                    <input [(ngModel)]='postagem.link' type="text" name="link" class="form-control" id="link"
+                        placeholder="link do Curso">
+                </div>
+                <div class="form-group">
+                    <label for="tema">Tema do Curso</label>
+                    <select class="form-control" id="tema" name="tipo" [(ngModel)]='idTema' (change)='findByIdTema()'>
+                        <option *ngFor='let item of listaTemas' value="{{item.id}}">
+                            {{item.tipo}}
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-success" (click)='publicar()'>Publicar</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
+
+
+
 
 <div>
     <a href="#" id="feedback" type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalExemplo">

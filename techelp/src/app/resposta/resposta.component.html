@@ -2,7 +2,7 @@
     <div class="card mb-2">
         <h5 class="card-header">{{forum.titulo}}</h5>
         <div class="card-body">
-            <div *ngIf="temImagem">
+            <div *ngIf='forum.imagem'>
                 <img class="img-resp" src="{{forum.imagem}}" alt="imagem da publicação do usuário">
             </div>
             <p class="card-text">{{forum.publicacao}}

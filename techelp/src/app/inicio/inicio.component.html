@@ -59,25 +59,7 @@
   </div>
 </div>
 
-<div class="container ">
-<div class="row d-flex justify-content-around">
-  <div class="col-md-2" *ngFor='let item of listaTemas'>
-  <a [routerLink]="['/curso', item.id]"><img class="rounded-circle ic-50 btn" src="{{item.imagem}}" alt=""></a>
-</div>
-</div>
-<div class="row d-flex justify-content-center">
-  <div class="col-md-2" *ngFor='let item of listaTemas'>
-    <a data-toggle="collapse" data-target="#descricao">
-      <h5 class="card-title">{{item.tipo}}</h5>
-    </a>
-</div>
-</div>
-</div>
-
-
-  <p class="text-center mr-5"> <a routerLink='/tema'> cadastrar um tema</a> </p>
-
-  <p class="text-center"> <a routerLink="/postagem"> cadastrar um curso</a> </p>
+<!---->
 
   <div>
     <a href="#" id="feedback" type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalExemplo">

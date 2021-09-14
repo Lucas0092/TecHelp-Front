@@ -46,7 +46,7 @@
     <div class="card mb-2" *ngFor='let item of listaForum'>
         <h5 class="card-header">{{item.titulo}}</h5>
         <div class="card-body">
-            <img class="img-forum" src="{{item.imagem}}" alt="imagem da publicação do usuário">
+            <img *ngIf='item.imagem' class="img-forum" src="{{item.imagem}}" alt="imagem da publicação do usuário">
             <p class="card-text">{{item.publicacao}}
             </p>
             <button class="btn btn-info mr-4" [routerLink]="['/resposta', item.id]">Participar desse forum</button>
