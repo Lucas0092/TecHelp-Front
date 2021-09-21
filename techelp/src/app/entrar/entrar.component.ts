@@ -20,6 +20,7 @@ export class EntrarComponent implements OnInit {
 
   ngOnInit(){
     window.scroll(0,0)
+    environment.token =""
   }
 
   entrar(){
@@ -30,6 +31,7 @@ export class EntrarComponent implements OnInit {
       environment.nome = this.userLogin.nome
       environment.foto = this.userLogin.foto
       environment.id = this.userLogin.id
+      environment.tipo = this.userLogin.tipo
 
       console.log(environment.token)
       console.log(environment.nome)

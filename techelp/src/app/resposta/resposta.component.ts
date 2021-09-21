@@ -42,15 +42,16 @@ export class RespostaComponent implements OnInit {
     }
     this.idForum = this.route.snapshot.params['id']
     this.findByIdForum()
+    this.findUsuarioById()
 
   }
 
 
   comentar() {
+
     this.forum.id = this.idForum
     this.resposta.forum = this.forum
 
-    this.user.id = this.idUser
     this.resposta.usuario = this.user
 
     this.respostaService.postResposta(this.resposta).subscribe((resp: Resposta) => {
@@ -65,6 +66,13 @@ export class RespostaComponent implements OnInit {
     this.forumService.getByIdForum(this.idForum).subscribe((resp: Forum) => {
       this.forum = resp
       console.log(this.forum)
+    })
+  }
+
+  findUsuarioById() {
+    this.authService.getByIdUsuario(this.idUser).subscribe((resp: Usuario) => {
+      this.user = resp
+      this.findByIdForum()
     })
   }
 

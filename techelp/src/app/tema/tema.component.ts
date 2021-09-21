@@ -26,6 +26,11 @@ export class TemaComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
 
+    if(environment.tipo != 'adm'){
+      alert('rota reservada para administradores')
+      this.router.navigate(['/inicio'])
+    }
+
     this.findAllTemas()
   }
 

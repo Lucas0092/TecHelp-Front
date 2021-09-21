@@ -59,7 +59,7 @@
   </div>
 </div>
 
-<div class="d-flex justify-content-center mt-5 mb-5">
+<div *ngIf='authService.adm()' class="d-flex justify-content-center mt-5 mb-5">
   <button class="btn btn-info mr-3" routerLink='/tema'>cadastrar um tema</button>
   <button class="btn btn-danger" routerLink ='/postagem'>cadastrar um curso</button>
 </div>

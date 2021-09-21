@@ -7,9 +7,12 @@
     </div>
 </div>
 
+
+
+
 <div class="container mb-5">
-    <div class="card-group">
-        <div class="card centro" *ngFor='let item of tema.postagens'>
+    <div class="card-columns">
+        <div class="card" *ngFor='let item of tema.postagens'>
             <img class="card-img-top" src="{{item.imagem}}" alt="Imagem de capa do card">
             <div class="card-body">
                 <h5 class="card-title">{{item.curso}}</h5>
@@ -18,7 +21,7 @@
                 <a href="{{item.link}}" target="_blank" class="btn btn-primary">Clique
                     aqui!</a>
             </div>
-            <td class="d-flex justify-content-end mb-3 mr-3">
+            <td  *ngIf='authService.adm()' class="d-flex justify-content-end mb-3 mr-3">
                 <button class="btn btn-info mr-3" [routerLink]="['/curso-edit', item.id]">Editar</button>
                 <button class="btn btn-danger" [routerLink]="['/curso-delete', item.id]">Apagar</button>
             </td>

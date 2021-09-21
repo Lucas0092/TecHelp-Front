@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Forum } from '../model/Forum';
 import { Usuario } from '../model/Usuario';
+import { AuthService } from '../service/auth.service';
 import { ForumService } from '../service/forum.service';
 
 @Component({
@@ -22,7 +23,8 @@ export class ForumComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private forumService: ForumService
+    private forumService: ForumService,
+    public authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -32,7 +34,7 @@ export class ForumComponent implements OnInit {
     }
 
     this.findAllForum()
-    this.confere()
+    this.findUsuarioById()
   }
 
 
@@ -43,6 +45,7 @@ export class ForumComponent implements OnInit {
   }
 
   publicar() {
+      this.forum.usuario = this.user
       this.forumService.postForum(this.forum).subscribe((resp: Forum) => {
       this.forum = resp
       this.findAllForum()
@@ -51,11 +54,11 @@ export class ForumComponent implements OnInit {
     })
   }
 
-  confere(){
-    if(this.forum.imagem == ""){
-      this.temImagem = false
-    } else{
-      this.temImagem = true
-    }
+  findUsuarioById() {
+    this.authService.getByIdUsuario(this.idUser).subscribe((resp: Usuario) => {
+      this.user = resp
+    })
   }
+
+  
 }

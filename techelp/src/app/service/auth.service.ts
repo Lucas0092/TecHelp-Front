@@ -36,4 +36,14 @@ export class AuthService {
   getByIdUsuario(id: number): Observable<Usuario> {
     return this.http.get<Usuario>(`https://projetotechelp.herokuapp.com/usuario/${id}`)
   }
+
+  adm(){
+    let ok: boolean = false
+
+    if(environment.tipo == "adm"){
+      ok = true
+    }
+
+    return ok
+  }
 }

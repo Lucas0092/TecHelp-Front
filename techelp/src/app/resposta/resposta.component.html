@@ -1,5 +1,6 @@
-<div class="container mt-5 mb-5">
-    <div class="card mb-2">
+<div class="container-fluid p-5" style="background-color: teal;">
+    <div class="row mb-4"></div>
+    <div class="card">
         <h5 class="card-header">{{forum.titulo}}</h5>
         <div class="card-body">
             <div *ngIf='forum.imagem'>
@@ -7,81 +8,84 @@
             </div>
             <p class="card-text">{{forum.publicacao}}
             </p>
-            <button class="btn btn-info mr-4" data-toggle="collapse" data-target="#responder">Responder</button>
+            <button class="btn btn-info mr-4 mb-4" data-toggle="collapse" data-target="#responder">Responder</button>
         </div>
     </div>
 </div>
 
-<div class="row d-flex justify-content-end">
-    <div class="col-md-10">
-        <div class="container mt-5 mb-5">
-            <div class="card mb-2" *ngFor='let item of forum.resposta'>
-                <div class="card-body">
-                    <img class="img-forum" src="{{item.imagem}}" alt="imagem da publicação do usuário">
-                    <p class="card-text">{{item.comentario}}
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<div class="container-fluid collapse m-0" id="responder" style="background-color: #28b982 ;">
+    <div class="row d-flex justify-content-center">
 
+        <div class="col-xl-4 col-md-4 mt-4 mb-5" style=" background-color: teal; border-radius: 5%;">
 
-<div class="container mt-5 mb-5 rounded collapse" id="responder">
-    <div class="row d-flex justify-content-center mb-3">
-        <div class="col-md-8">
             <div class="form-group text-center">
-                <label for="imagem">Imagem do Comentário</label>
+                <label for="imagem"> <b>Imagem do Comentário</b> </label>
                 <input [(ngModel)]="resposta.imagem" type="text" class="form-control" id="imagem"
                     placeholder="link da imagem do seu comentário">
             </div>
-        </div>
-    </div>
 
-    <div class="row d-flex justify-content-center mb-1">
-        <div class="col-md-8">
             <div class="form-group text-center">
-                <label for="comentario">Seu Comentário</label>
+                <label for="comentario"> <b>Seu Comentário</b> </label>
                 <textarea [(ngModel)]="resposta.comentario" style="height: 300%;" type="text" class="form-control"
                     id="comentario" placeholder="digite seu comentário"></textarea>
             </div>
+            <div class="row d-flex justify-content-center">
+                <button (click)="comentar()" class="btn text-white mb-3" style="background-color: #28b982;"> <b>Comentar</b> </button>
+            </div>
+
         </div>
     </div>
-    <div class="row d-flex justify-content-center">
-        <button (click)="comentar()" class="btn btn-outline-primary mb-3">Comentar</button>
-    </div>
-
 </div>
 
-<div>
-    <a href="#" id="feedback" type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalExemplo">
-        clique </a>
-
-    <!-- Modal -->
-    <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ei, cê precisa de ajuda? Conta conosco</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p> A pandemia e o isolamento por si sós são dois grandes problemas, mas separamos aqui algumas
-                        referências para te ajudar em qualquer eventualidade. Clicando em qualquer uma delas, você é
-                        redirecionade pra lá, ok? </p>
-                </div>
-                <div class="modal-footer d-flex justify-content-center ">
-                    <a href="http://www.apeoesp.org.br/publicacoes/atendimento-psicologico/atendimento-psicologico-gratuito-neste-periodo-de-isolamento-veja-aqui/"
-                        target="_blank" type="button" class="btn btn-outline-danger rounded-pill  btn-sm">Atendimento
-                        psicológico gratuito</a>
-                    <a href="https://www.cvv.org.br/" target="_blank" type="button"
-                        class="btn btn-outline-danger rounded-pill  btn-sm">Centro de Valorização a Vida</a>
-
+<div class="container-fluid" style="background-color: teal;">
+    <div class="row d-flex justify-content-end">
+        <div class="col-md-10">
+            <div class="container mt-2 mb-2">
+                <div class="card mb-2" *ngFor='let item of forum.resposta'>
+                    <div class="card-body">
+                        <img *ngIf='item.imagem' class="img-forum" src="{{item.imagem}}"
+                            alt="imagem da publicação do usuário">
+                        <p class="card-text">{{item.comentario}}
+                        </p>
+                        <footer class="blockquote-footer">{{item.usuario.nomeCompleto}}</footer>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+    <div>
+        <a href="#" id="feedback" type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalExemplo">
+            clique </a>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ei, cê precisa de ajuda? Conta conosco</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p> A pandemia e o isolamento por si sós são dois grandes problemas, mas separamos aqui algumas
+                            referências para te ajudar em qualquer eventualidade. Clicando em qualquer uma delas, você é
+                            redirecionade pra lá, ok? </p>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center ">
+                        <a href="http://www.apeoesp.org.br/publicacoes/atendimento-psicologico/atendimento-psicologico-gratuito-neste-periodo-de-isolamento-veja-aqui/"
+                            target="_blank" type="button"
+                            class="btn btn-outline-danger rounded-pill  btn-sm">Atendimento
+                            psicológico gratuito</a>
+                        <a href="https://www.cvv.org.br/" target="_blank" type="button"
+                            class="btn btn-outline-danger rounded-pill  btn-sm">Centro de Valorização a Vida</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

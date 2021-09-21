@@ -1,139 +1,121 @@
-<div class="container-fluid">
+<div class="container-fluid" style="background-color:  #03989e; ">
 
     <div class="row bg-info d-flex align-items-center">
-        <div class="col-md-6 d-flex justify-content-center p-0">
-            <img src="https://i.imgur.com/ZE6pPRO.png" alt="Imagem de Forum" class="mx-auto d-block p-0" width="674px"
-                height="350px">
-            <div class="carousel-caption d-md-block mb-5">
-                <h3 class="text-dark"><b>Sejam todos bem vindos ao nosso Forum da Techelp</b></h3>
-                <h5 class="text-dark"><b>este é um espaço para compartilhamento de ideais, informações sobre outros
-                        cursos voltados a tecnologias e habilidades diversas para o mercado de trabalho, troca de
-                        experiências, dicas de eventos, canais e interações respeitosas com todos os membros da
-                        rede.</b></h5>
+        <div class="col-md-6 d-flex justify-content-start">
+            <div class="mb-5">
+                <h3 class="text-dark text-center mb-3"><b>Sejam todos bem vindos ao nosso Forum da Techelp</b></h3>
+                <h5 class="text-dark text-justify">este é um espaço para compartilhamento de ideais, informações sobre
+                    outros
+                    cursos voltados a tecnologias e habilidades diversas para o mercado de trabalho, troca de
+                    experiências, dicas de eventos, canais e interações respeitosas com todos os membros da
+                    rede.</h5>
             </div>
-
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+            <img height="500px" width="500px" src="https://i.imgur.com/KxKS8yo.png" alt="">
         </div>
 
+    </div>
 
-        <div class="col-md-6 d-flex justify-content-center p-0">
-            <img src="https://i.imgur.com/jJdB36L.png" alt="Imagem de Forum" class="mx-auto d-block p-0" width="674px"
-                height="350px">
-            <div class="carousel-caption d-md-block">
-                <h4 class="text-dark"><b>Sendo um ambiente para todes, aqui vão alguns acordos de utilização do espaço:
-                    </b></h4>
-                <ul class="text-dark" style="list-style: none; font-size: 10pt;"><b>
-
-                        <li>Não utilizar palavras de baixo calão, racistas, homofóbicas, degradantes ou que causem
-                            constrangimento a qualquer pessoa;</li>
-
-                        <li>Não compartilhar conteúdos que não sejam ligados ao objetivo da página para que possamos
-                            melhor concentrar as informações que são pertinentes para todes. </li>
-
-                        <li>Não divulgar informações pessoais como endereços residenciais, documentos de identidade e
-                            informações de cartões de pagamento, para segurança de todes.</li>
-
-                        <li>Manter nossos perfis atualizados com nome e sobrenome, para que a comunicação se mantenha
-                            sempre direta e atual. </li>
-                    </b></ul>
-
+    <div class="container mt-5 mb-5">
+        <div class="card-columns">
+            <div class="card" *ngFor='let item of listaForum'>
+                <img *ngIf='item.imagem' class="card-img-top" src="{{item.imagem}}" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.titulo}}</h5>
+                    <p class="card-text">{{item.publicacao}}</p>
+                </div>
+                <div class="d-flex justify-content-center mb-2">
+                    <button class="btn mr-4 text-white" style="background-color:  #28b982;" [routerLink]="['/resposta', item.id]"><b>Participar</b></button>
+                <td *ngIf='authService.adm()' class="d-flex justify-content-end">
+                    <button class="btn btn-info mr-3" [routerLink]="['/forum-edit', item.id]">Editar</button>
+                    <button class="btn btn-danger" [routerLink]="['/forum-delete', item.id]">Apagar</button>
+                </td>
+                </div>    
             </div>
-
         </div>
     </div>
-</div>
 
-<div class="container mt-5 mb-5">
-    <div class="card mb-2" *ngFor='let item of listaForum'>
-        <h5 class="card-header">{{item.titulo}}</h5>
-        <div class="card-body">
-            <img *ngIf='item.imagem' class="img-forum" src="{{item.imagem}}" alt="imagem da publicação do usuário">
-            <p class="card-text">{{item.publicacao}}
-            </p>
-            <button class="btn btn-info mr-4" [routerLink]="['/resposta', item.id]">Participar desse forum</button>
-            <td class="d-flex justify-content-end">
-                <button class="btn btn-info mr-3" [routerLink]="['/forum-edit', item.id]">Editar</button>
-                <button class="btn btn-danger" [routerLink]="['/forum-delete', item.id]">Apagar</button>
-            </td>
+    <div class="row mt-3">
+        <div class="col-md-12 d-flex justify-content-center">
+            <button class="btn mb-5 text-white" style="background-color:  #28b982;" data-toggle="collapse"
+                data-target="#postar"><b>Começar um forum</b> </button>
         </div>
     </div>
-</div>
-<div class="row mb-3 mt-3">
-    <div class="col-md-12 d-flex justify-content-center">
-        <button class="btn btn-info" data-toggle="collapse" data-target="#postar">Começar um forum</button>
-    </div>
 
-</div>
+    
 
+    <div class="container-fluid mt-4 rounded collapse" id="postar" style=" border-radius: 10%;">
 
-<div class="container mt-5 mb-5 rounded collapse" id="postar">
-    <div style="background-color: rgb(85, 167, 182);border-radius: 10%;">
-        <div class="row d-flex justify-content-center mb-3">
-            <div class="col-md-4">
+        <div class="row d-flex justify-content-center">
+
+            <div class="col-xl-5 col-md-5 mt-4 mb-5" style=" background-color: teal; border-radius: 10%;">
+
+                <h1 class="text-center mb-3 p-25">Forum</h1>
+                <hr>
+
                 <div class="form-group text-center">
-                    <label for="publicacao">Título da Publicação</label>
+                    <label for="publicacao"> <b>Título da Publicação </b> </label>
                     <input [(ngModel)]="forum.titulo" type="text" class="form-control" id="publicacao"
                         placeholder="titulo da sua publicação">
                 </div>
-            </div>
-        </div>
 
-        <div class="row d-flex justify-content-center mb-3">
-            <div class="col-md-4">
                 <div class="form-group text-center">
-                    <label for="imagem">Imagem da Publicação</label>
+                    <label for="imagem"> <b>Imagem da Publicação</b> </label>
                     <input [(ngModel)]="forum.imagem" type="text" class="form-control" id="imagem"
                         placeholder="link da imagem da sua publicação">
                 </div>
-            </div>
-        </div>
 
-        <div class="row d-flex justify-content-center mb-1">
-            <div class="col-md-4">
                 <div class="form-group text-center">
-                    <label for="titulo">Sua publicação</label>
+                    <label for="titulo"> <b>Sua publicação</b> </label>
                     <textarea [(ngModel)]="forum.publicacao" style="height: 300%;" type="text" class="form-control"
                         id="titulo" placeholder="digite sua publicação"></textarea>
                 </div>
+
+                <div class="row d-flex justify-content-center">
+                    <button (click)="publicar()" class="btn btn-info mb-3" style="background-color: #28b982;">
+                        <b>Publicar</b> </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!---->
+
+
+    <div>
+        <a href="#" id="feedback" type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalExemplo">
+            clique </a>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ei, cê precisa de ajuda? Conta conosco</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p> A pandemia e o isolamento por si sós são dois grandes problemas, mas separamos aqui algumas
+                            referências para te ajudar em qualquer eventualidade. Clicando em qualquer uma delas, você é
+                            redirecionade pra lá, ok? </p>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center ">
+                        <a href="http://www.apeoesp.org.br/publicacoes/atendimento-psicologico/atendimento-psicologico-gratuito-neste-periodo-de-isolamento-veja-aqui/"
+                            target="_blank" type="button"
+                            class="btn btn-outline-danger rounded-pill  btn-sm">Atendimento
+                            psicológico gratuito</a>
+                        <a href="https://www.cvv.org.br/" target="_blank" type="button"
+                            class="btn btn-outline-danger rounded-pill  btn-sm">Centro de Valorização a Vida</a>
+
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row d-flex justify-content-center">
-            <button (click)="publicar()" class="btn btn-primary mb-3">Publicar</button>
-        </div>
     </div>
-</div>
-
-
-
-
-<div>
-    <a href="#" id="feedback" type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalExemplo">
-        clique </a>
-
-    <!-- Modal -->
-    <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ei, cê precisa de ajuda? Conta conosco</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p> A pandemia e o isolamento por si sós são dois grandes problemas, mas separamos aqui algumas
-                        referências para te ajudar em qualquer eventualidade. Clicando em qualquer uma delas, você é
-                        redirecionade pra lá, ok? </p>
-                </div>
-                <div class="modal-footer d-flex justify-content-center ">
-                    <a href="http://www.apeoesp.org.br/publicacoes/atendimento-psicologico/atendimento-psicologico-gratuito-neste-periodo-de-isolamento-veja-aqui/"
-                        target="_blank" type="button" class="btn btn-outline-danger rounded-pill  btn-sm">Atendimento
-                        psicológico gratuito</a>
-                    <a href="https://www.cvv.org.br/" target="_blank" type="button"
-                        class="btn btn-outline-danger rounded-pill  btn-sm">Centro de Valorização a Vida</a>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
