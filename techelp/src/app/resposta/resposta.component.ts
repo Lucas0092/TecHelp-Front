@@ -25,7 +25,7 @@ export class RespostaComponent implements OnInit {
   user: Usuario = new Usuario()
   idUser = environment.id
 
-  temImagem: boolean
+  
 
   constructor(
     private router: Router,
@@ -44,6 +44,12 @@ export class RespostaComponent implements OnInit {
     this.findByIdForum()
     this.findUsuarioById()
 
+  }
+
+  findUsuarioById(){
+    this.authService.getByIdUsuario(this.idUser).subscribe((resp: Usuario)=>{
+      this.user = resp
+    })
   }
 
 
@@ -69,12 +75,7 @@ export class RespostaComponent implements OnInit {
     })
   }
 
-  findUsuarioById() {
-    this.authService.getByIdUsuario(this.idUser).subscribe((resp: Usuario) => {
-      this.user = resp
-      this.findByIdForum()
-    })
-  }
+ 
 
 
 }
