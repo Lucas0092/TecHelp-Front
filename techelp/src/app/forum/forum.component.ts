@@ -45,7 +45,7 @@ export class ForumComponent implements OnInit {
   }
 
   publicar() {
-      this.forum.usuario = this.user
+
       this.forumService.postForum(this.forum).subscribe((resp: Forum) => {
       this.forum = resp
       this.findAllForum()
