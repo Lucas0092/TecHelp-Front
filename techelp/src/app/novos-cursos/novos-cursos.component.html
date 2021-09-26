@@ -1,0 +1,17 @@
+<div class="container mb-5 mt-5">
+    <div class="card-columns">
+        <div class="card" *ngFor='let item of listaPostagem | orderBy : key : reverse'>
+            <img *ngIf='item.imagem' class="card-img-top" src="{{item.imagem}}" alt="Imagem de capa do card">
+            <div class="card-body">
+                <h5 class="card-title">{{item.curso}}</h5>
+                <small>{{item.nivel}} - {{item.tema.tipo}}</small>
+                <p class="card-text">{{item.descricao}}</p>
+                <a href="{{item.link}}" target="_blank" class="btn btn-primary">Clique
+                    aqui!</a>
+            </div>
+            <td  *ngIf='authService.adm()' class="d-flex justify-content-end mb-3 mr-3">
+                
+            </td>
+        </div>
+    </div>
+</div>

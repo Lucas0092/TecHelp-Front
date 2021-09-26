@@ -2,8 +2,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HashLocationStrategy, LocationStrategy } from "@angular/common";
-
+import { OrderModule } from 'ngx-order-pipe';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
@@ -26,6 +28,7 @@ import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component'
 import { CursoDeleteComponent } from './delete/curso-delete/curso-delete.component';
 import { ForumDeleteComponent } from './delete/forum-delete/forum-delete.component';
 import { RespostaDeleteComponent } from './delete/resposta-delete/resposta-delete.component';
+import { NovosCursosComponent } from './novos-cursos/novos-cursos.component';
 
 
 @NgModule({
@@ -50,13 +53,16 @@ import { RespostaDeleteComponent } from './delete/resposta-delete/resposta-delet
     TemaDeleteComponent,
     CursoDeleteComponent,
     ForumDeleteComponent,
-    RespostaDeleteComponent
+    RespostaDeleteComponent,
+    NovosCursosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot(),
+    OrderModule
   ],
   providers: [{
     provide: LocationStrategy,

@@ -56,6 +56,10 @@ export class RespostaComponent implements OnInit {
   comentar() {
 
     this.forum.id = this.idForum
+    this.resposta.forum = this.forum
+
+    this.user.id = this.idUser
+    this.resposta.usuario = this.user
 
     this.respostaService.postResposta(this.resposta).subscribe((resp: Resposta) => {
       this.resposta = resp
@@ -71,8 +75,5 @@ export class RespostaComponent implements OnInit {
       console.log(this.forum)
     })
   }
-
- 
-
 
 }

@@ -14,6 +14,7 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
 import { EntrarComponent } from './entrar/entrar.component';
 import { ForumComponent } from './forum/forum.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { NovosCursosComponent } from './novos-cursos/novos-cursos.component';
 import { PostagemComponent } from './postagem/postagem.component';
 import { RespostaComponent } from './resposta/resposta.component';
 import { SobreComponent } from './sobre/sobre.component';
@@ -35,6 +36,8 @@ const routes: Routes = [
 {path: 'curso/:id', component: CursoComponent},
 
 {path: "sobre", component: SobreComponent},
+
+{path: "novos-cursos", component: NovosCursosComponent},
 
 {path: 'tema-edit/:id', component: TemaEditComponent},
 {path: 'usuario-edit/:id', component: UsuarioEditComponent},
