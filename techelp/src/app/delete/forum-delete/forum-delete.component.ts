@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Forum } from 'src/app/model/Forum';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { ForumService } from 'src/app/service/forum.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -17,6 +18,7 @@ export class ForumDeleteComponent implements OnInit {
     private forumService: ForumService,
     private router: Router,
     private route: ActivatedRoute,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -37,7 +39,7 @@ export class ForumDeleteComponent implements OnInit {
 
   apagar(){
     this.forumService.deleteByIdForum(this.idTema).subscribe(()=>{
-      alert('forum apagado com sucesso')
+      this.alertas.showAlertSuccess('forum apagado com sucesso')
       this.router.navigate(['/forum'])
     })
   }

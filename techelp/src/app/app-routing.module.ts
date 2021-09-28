@@ -17,6 +17,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { NovosCursosComponent } from './novos-cursos/novos-cursos.component';
 import { PostagemComponent } from './postagem/postagem.component';
 import { RespostaComponent } from './resposta/resposta.component';
+import { ResultadoPesquisaComponent } from './resultado-pesquisa/resultado-pesquisa.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { TemaComponent } from './tema/tema.component';
 
@@ -48,9 +49,9 @@ const routes: Routes = [
 {path: 'tema-delete/:id', component: TemaDeleteComponent},
 {path: 'forum-delete/:id', component: ForumDeleteComponent},
 {path: 'curso-delete/:id', component: CursoDeleteComponent},
-{path: 'resposta-delete/:id', component: RespostaDeleteComponent}
+{path: 'resposta-delete/:id', component: RespostaDeleteComponent},
 
-
+{path: 'resultado-pesquisa/:curso', component: ResultadoPesquisaComponent}
 ];
 
 @NgModule({

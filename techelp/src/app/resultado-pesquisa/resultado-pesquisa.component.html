@@ -1,0 +1,19 @@
+
+<div class="container mt-5 mb-5">
+    <div class="card-columns">
+        <div class="card" *ngFor='let item of listaPostagens'>
+            <img *ngIf='item.imagem' class="card-img-top" src="{{item.imagem}}" alt="Imagem de capa do card">
+            <div class="card-body">
+                <h5 class="card-title">{{item.curso}}</h5>
+                <small>{{item.nivel}}</small>
+                <p class="card-text">{{item.descricao}}</p>
+                <a href="{{item.link}}" target="_blank" class="btn btn-primary">Clique
+                    aqui!</a>
+            </div>
+            <td  *ngIf='authService.adm()' class="d-flex justify-content-end mb-3 mr-3">
+                <button class="btn btn-info mr-3" [routerLink]="['/curso-edit', item.id]">Editar</button>
+                <button class="btn btn-danger" [routerLink]="['/curso-delete', item.id]">Apagar</button>
+            </td>
+        </div>
+    </div>
+</div>

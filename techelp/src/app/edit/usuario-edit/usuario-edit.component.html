@@ -1,89 +1,96 @@
-<div class="row d-flex justify-content-center mt-5 mb-5">
-    <div class="col-md-6 d-flex justify-content-center"><button class="btn btn-info" data-toggle="collapse"
-            data-target="#editar">Editar usuário</button></div>
-</div>
+<div class="container-fluid m-0" style="background-color:#74b7ed;">
 
-
-
-
-<div class="container mb-5 mt-5 collapse" id="editar">
-
-    <div class="row ">
-        <div class="col-md-12">
-            <h1 class="text-center text-dark">Atualizar meu usuário</h1>
+    <div *ngIf='usuario.foto' class="row mb-4">
+        <div class="col-md-12 d-flex justify-content-center mt-3"> 
+        <img src="{{usuario.foto}}" alt="imagem de perfil do usuário" style="border-radius: 50%; width: 300px; height: 300px; margin: 0px;">
         </div>
     </div>
 
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-10">
+<div class="row d-flex justify-content-center mb-2">
+    <div class="col-md-6 d-flex justify-content-center mt-5"><button class="btn btn-info" data-toggle="collapse"
+            data-target="#editar">Editar usuário</button></div>
+</div>
+
+<div class="container mb-5 mt-2 collapse" id="editar">
+
+    <div class="row d-flex justify-content-center p-5">
+
+        <div class="col-xl-4 col-md-4 mt-2 mb-5" style="background-color: rgb(85, 167, 182);border-radius: 10%;">
+
+            <h2 class="text-center mt-1">Atualizar meu usuário</h2>
+            <hr>
 
             <div class="form-group">
-                <label for="nome">Nome Completo</label>
-                <input [(ngModel)]='usuario.nomeCompleto' class="form-control" type="text" name="nome" id="nome"
-                    placeholder="Seu nome completo">
+                <label for="nomeCompleto"><b>Nome Completo</b></label>
+                <input [(ngModel)]="usuario.nomeCompleto" class="form-control" type="text" name="nome" id="nome"
+                    placeholder="Nome Completo">
             </div>
 
             <div class="form-group">
-                <label for="usuario">Email</label>
-                <input [(ngModel)]='usuario.email' class="form-control" type="text" name="usuario" id="usuario"
+                <label for="email"><b>E-mail</b></label>
+                <input [(ngModel)]="usuario.email" class="form-control" type="text" name="email" id="email"
                     placeholder="Seu email">
             </div>
 
             <div class="form-group">
-                <label for="foto">Link da Foto</label>
-                <input [(ngModel)]='usuario.foto' class="form-control" type="text" name="foto" id="foto"
+                <label for="foto"> <b>Link da Foto</b></label>
+                <input [(ngModel)]="usuario.foto" class="form-control" type="text" name="foto" id="foto"
                     placeholder="Link da sua foto">
             </div>
 
-            <div class="form-group">
-                <label for="senha">Senha</label>
-                <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha"
-                    placeholder="Sua senha">
-            </div>
+            <div class="row align-items">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="senha"><b>Senha</b></label>
+                        <input (input)="confirmSenha($event)" class="form-control" type="password" name="senha"
+                            id="senha" placeholder="Sua senha">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="confirmSenha"><b>Confirmar Senha</b></label>
+                        <input [(ngModel)]="usuario.senha" class="form-control" type="password" name="confirmSenha"
+                            id="confirmSenha" placeholder="Confirme sua senha">
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <label for="confirmSenha">Confirmar Senha</label>
-                <input [(ngModel)]='usuario.senha' class="form-control" type="password" name="confirmSenha"
-                    id="confirmSenha" placeholder="Confirme sua senha">
-            </div>
+                <div class="d-flex justify-content-center mt-2 mb-3 offset-md-2">
+                    <button type="submit" class="btn btn-outline-dark mr-2" routerLink='/inicio'><b>Cancelar</b></button>
+                    <button type="submit" class="btn btn-primary ml-4" (click)='atualizar()'><b>Atualizar</b></button>
+                </div>
 
-            <div class="form-group">
-                <label for="tipo">Tipo de Usuário</label>
-                <select class="form-control" name="tipo" id="tipo" (change)='tipoUser($event)'>
-                    <option>Selecione um tipo de usuário:</option>
-                    <option value="normal">Normal</option>
-                    <option value="adm">Administrador</option>
-                </select>
-            </div>
-
-            <div class="d-flex justify-content-center mt-3 mb-3">
-                <button type="submit" class="btn btn-outline-dark mr-4" routerLink='/inicio'>Cancelar</button>
-                <button type="submit" class="btn btn-primary" (click)='atualizar()'>Atualizar</button>
+                <div class="col-md-6 d-flex justify-content-center">
+                        
+                </div>
+                
             </div>
 
         </div>
     </div>
-
 </div>
 
-<div class="row d-flex justify-content-center mt-5 mb-5">
-    <div class="col-md-6 d-flex justify-content-center"><button class="btn btn-info" data-toggle="collapse"
-            data-target="#postagens">Minhas postagens</button></div>
-</div>
-
-<div class="container mt-5 mb-5 collapse" id="postagens">
-
-    <div class="card mb-2" *ngFor='let item of usuario.forum'>
-        <h5 class="card-header">{{item.titulo}}</h5>
-        <div class="card-body">
-            <img class="img-forum" src="{{item.imagem}}" alt="imagem da publicação do usuário">
-            <p class="card-text">{{item.publicacao}}
-            </p>
-            <button class="btn btn-info mr-4" [routerLink]="['/resposta', item.id]">Participar desse forum</button>
-            <td class="d-flex justify-content-end">
-                <button class="btn btn-info mr-3" [routerLink]="['/forum-edit', item.id]">Editar</button>
-                <button class="btn btn-danger" [routerLink]="['/forum-delete', item.id]">Apagar</button>
-            </td>
+        <div class="row d-flex justify-content-center mt-2">
+            <div class="col-md-6 d-flex justify-content-center mb-5"><button class="btn btn-info" data-toggle="collapse"
+                    data-target="#postagens">Minhas postagens</button></div>
         </div>
-    </div>
+
+        <div class="container mt-5 mb-5 collapse" id="postagens">
+
+            <div class="card mb-2" *ngFor='let item of usuario.forum'>
+                <h5 class="card-header">{{item.titulo}}</h5>
+                <div class="card-body">
+                    <img class="img-forum" src="{{item.imagem}}" alt="imagem da publicação do usuário">
+                    <p class="card-text">{{item.publicacao}}
+                    </p>
+                    <button class="btn btn-info mr-4" [routerLink]="['/resposta', item.id]">Participar desse
+                        forum</button>
+                    <td class="d-flex justify-content-end">
+                        <button class="btn btn-info mr-3" [routerLink]="['/forum-edit', item.id]">Editar</button>
+                        <button class="btn btn-danger" [routerLink]="['/forum-delete', item.id]">Apagar</button>
+                    </td>
+                </div>
+            </div>
+
+        </div>
+
 </div>

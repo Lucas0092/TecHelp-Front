@@ -17,9 +17,9 @@
             <div class="row no-gutters">
                 <div class="col-md-5 mr-0 d-flex">
                     <form class="form-inline my-2 my-lg-0 ">
-                        <input class="form-control mr-sm-2" size="50" type="search" placeholder="Pesquisar"
+                        <input (input)='definirCurso($event)' [(ngModel)]='curso'  class="form-control mr-sm-2" size="50" type="search" placeholder="Digite uma tecnologia que deseja aprender"
                             aria-label="Pesquisar">
-                        <a href="#" class="align-items-center" style="padding-top: 15px;">
+                        <a [routerLink]="['/resultado-pesquisa', curso]" class="align-items-center" style="padding-top: 15px;">
                             <p class="text-dark">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </p>

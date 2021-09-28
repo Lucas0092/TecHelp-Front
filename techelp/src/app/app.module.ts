@@ -6,6 +6,7 @@ import { OrderModule } from 'ngx-order-pipe';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppRoutingModule } from './app-routing.module';
 
+import { ForumComponent } from './forum/forum.component';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
@@ -15,7 +16,6 @@ import { FormsModule } from "@angular/forms";
 import { InicioComponent } from './inicio/inicio.component';
 import { TemaComponent } from './tema/tema.component';
 import { PostagemComponent } from './postagem/postagem.component';
-import { ForumComponent } from './forum/forum.component';
 import { RespostaComponent } from './resposta/resposta.component';
 import { CursoComponent } from './curso/curso.component';
 import { SobreComponent } from './sobre/sobre.component';
@@ -29,7 +29,8 @@ import { CursoDeleteComponent } from './delete/curso-delete/curso-delete.compone
 import { ForumDeleteComponent } from './delete/forum-delete/forum-delete.component';
 import { RespostaDeleteComponent } from './delete/resposta-delete/resposta-delete.component';
 import { NovosCursosComponent } from './novos-cursos/novos-cursos.component';
-
+import { AlertasComponent } from './alertas/alertas.component';
+import { ResultadoPesquisaComponent } from './resultado-pesquisa/resultado-pesquisa.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,9 @@ import { NovosCursosComponent } from './novos-cursos/novos-cursos.component';
     CursoDeleteComponent,
     ForumDeleteComponent,
     RespostaDeleteComponent,
-    NovosCursosComponent
+    NovosCursosComponent,
+    AlertasComponent,
+    ResultadoPesquisaComponent
   ],
   imports: [
     BrowserModule,

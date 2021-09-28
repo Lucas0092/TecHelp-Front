@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Forum } from '../model/Forum';
 import { Resposta } from '../model/Resposta';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { ForumService } from '../service/forum.service';
 import { RespostaService } from '../service/resposta.service';
@@ -32,7 +33,8 @@ export class RespostaComponent implements OnInit {
     private respostaService: RespostaService,
     private forumService: ForumService,
     public authService: AuthService,
-    public route: ActivatedRoute
+    public route: ActivatedRoute,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -63,7 +65,7 @@ export class RespostaComponent implements OnInit {
 
     this.respostaService.postResposta(this.resposta).subscribe((resp: Resposta) => {
       this.resposta = resp
-      alert('resposta realizada com sucesso')
+      this.alertas.showAlertSuccess('resposta realizada com sucesso')
       this.resposta = new Resposta()
     })
 

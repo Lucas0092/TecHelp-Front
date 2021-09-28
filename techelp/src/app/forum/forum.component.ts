@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Forum } from '../model/Forum';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { ForumService } from '../service/forum.service';
 
@@ -24,7 +25,8 @@ export class ForumComponent implements OnInit {
   constructor(
     private router: Router,
     private forumService: ForumService,
-    public authService: AuthService
+    public authService: AuthService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -49,7 +51,7 @@ export class ForumComponent implements OnInit {
       this.forumService.postForum(this.forum).subscribe((resp: Forum) => {
       this.forum = resp
       this.findAllForum()
-      alert('publicado com sucesso')
+      this.alertas.showAlertSuccess('publicado com sucesso')
       this.forum = new Forum()
     })
   }
